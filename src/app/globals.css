@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Warm paper and ink, with the logo's blue kept as the one accent. */
+:root {
+  --bg: #faf8f4;
+  --card: #f2efe8;
+  --border: #d9d4c8;
+  --accent: #0b6a8a;
+  --on-accent: #ffffff;
+  --text: #1c1b19;
+  --muted: #6a665d;
+  --error: #b42318;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121316;
+    --card: #1a1c20;
+    --border: #2d3036;
+    --accent: #4cc3e6;
+    --on-accent: #0b0f14;
+    --text: #ecebe7;
+    --muted: #9a9a94;
+    --error: #ff8a80;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-error: var(--error);
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-serif: var(--font-serif), Georgia, "Times New Roman", serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* German gender marks, as in the app: der blue, die pink, das green. */
+.g-der { color: #3b82f6; text-decoration: underline solid; text-underline-offset: 3px; }
+.g-die { color: #ec4899; text-decoration: underline dotted; text-underline-offset: 3px; }
+.g-das { color: #10b981; text-decoration: underline dashed; text-underline-offset: 3px; }
