@@ -14,13 +14,3 @@ export type PricingContent = {
 export type { LegalDocument } from "./legal";
 
 export type ContentKey = "home" | "pricing" | "terms" | "privacy" | "impressum";
-
-export const CONTENT_LABELS: Record<ContentKey, { title: string; text: string }> = {
-  home: { title: "Home page", text: "Headline, introduction, features and levels." },
-  pricing: { title: "Pricing", text: "Plans, prices and common questions." },
-  terms: { title: "Terms & Conditions", text: "The terms page." },
-  privacy: { title: "Privacy Policy", text: "The privacy page." },
-  impressum: { title: "Impressum", text: "The legal notice." },
-};
-
-export const isContentKey = (k: string): k is ContentKey => k in CONTENT_LABELS;

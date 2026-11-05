@@ -8,7 +8,6 @@ const items = [
   { href: "/admin/scenarios", label: "Scenarios" },
   { href: "/admin/requests", label: "Suggestions" },
   { href: "/admin/tickets", label: "Support" },
-  { href: "/admin/content", label: "Website content" },
   { href: "/admin/users", label: "Users" },
 ];
 

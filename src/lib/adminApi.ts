@@ -78,8 +78,6 @@ export type UserDetail = AdminUser & {
   recent_scores: { kind: string; points: number; created_at: string }[];
 };
 
-export type ContentInfo = { key: string; customised: boolean; updated_at: string | null };
-
 /** Sends a change to the backend as the signed-in admin. Returns an error message instead of throwing. */
 export async function adminSend(method: "PATCH" | "PUT" | "DELETE" | "POST", path: string, body?: unknown) {
   const token = await getToken();
@@ -100,3 +98,16 @@ export async function adminSend(method: "PATCH" | "PUT" | "DELETE" | "POST", pat
     return { ok: false as const, error: "The server could not be reached." };
   }
 }
+
+export type HistoryItem = {
+  id: number;
+  source: "speech" | "scan";
+  transcript: string;
+  translation: string;
+  explanation: string;
+  tone: string;
+  grammar: string;
+  quiz_score: number | null;
+  quiz_total: number | null;
+  created_at: string;
+};
